@@ -15,24 +15,24 @@ ul {
   list-style-type: none;
 }
 
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .portfolio {
   padding: 68px 40px 67px 40px;
   height: 729px;
   background-color: #2d303a;
 }
 
-.portfolio__name,
-.portfolio__description {
-  margin: 0;
-  padding: 0;
-}
-
-.portfolio__name {
+.portfolio__title {
   padding: 1px 0 27px 0;
   font-size: 30px;
   line-height: 18px;
   color: #666d89;
-  font-weight: 700;
+  font-weight: 900;
   text-align: left;
 }
 
@@ -85,10 +85,83 @@ ul {
   overflow: hidden;
 }
 
-.portfolio__image {
+.portfolio__img {
   width: 220px;
   height: 187px;
   margin-bottom: 20px;
   overflow: hidden;
   background-color: #464b5e;
+}
+
+.resume {
+  height: 593px;
+  padding: 68px 40px 67px 40px;
+  background-color: #f2f2f2;
+  color: #767e9e;
+}
+
+.resume__title {
+  font-size: 30px;
+  line-height: 18px;
+  color: #666d89;
+  font-weight: 900;
+  text-align: left;
+}
+
+.resume__description {
+  padding: 27px 0 45px 0;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.resume__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 940px;
+}
+
+.resume__item {
+  width: 300px;
+}
+
+.resume__item:nth-child(2) {
+  margin-right: 2px;
+}
+
+.resume__employee-name {
+  padding: 14px 0 10px 0;
+  font-size: 18px;
+  line-height: 18px;
+  color: #666d89;
+  font-weight: 900;
+  text-align: left;
+}
+
+.resume__employeee-description {
+  font-size: 12px;
+  line-height: 21px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.resume__communication > a {
+  margin-right: 3px;
+  text-decoration: none;
+}
+
+.resume__social-icon:hover {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.resume__communication {
+  margin: 23px 0;
+}
+
+.resume-line {
+  height: 6px;
+  background-color: #ffffff;
 }
