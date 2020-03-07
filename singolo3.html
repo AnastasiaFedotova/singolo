@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>SINGOLO#3</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="singolo3.css">
   </head>
   <body>
@@ -16,64 +17,71 @@
         Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
         lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
       </p>
-      <form class="message">
-        <input type="text" placeholder="Name (Required)" required>
-        <input type="email" placeholder="Email (Required)" required>
-        <input type="text" placeholder="Subject">
-        <input class="message__content" type="text" placeholder="Describe your project in detail...">
-        <button type="submit">Отправить</button>
-      </form>
-      <div class="contacts">
-        <h3 class="contacts__title">
-          Contact Information
-        </h3>
-        <p class="contacts__description">
-          Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
-          Fusce vitae aliquam tellus. Proin sit amet volutpat libero.
-          Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
-        </p>
-        <ul class="contacts__information">
-          <li class="contacts__item">
-            <img src="assets/contacts/location.png" alt="location">
-            <a href="">
-              Elm St. 14/05 Lost City
-            </a>
-          </li>
-          <li class="contacts__item">
-            <img src="assets/contacts/phone.png" alt="phone">
-            <a href="tel:035283318635">
-              03528 331 86 35
-            </a>
-          </li>
-          <li class="contacts__item">
-            <img src="assets/contacts/mail.png" alt="mail">
-            <a href="mail:info@singolo.com">
-              info@singolo.com
-            </a>
-          </li>
-        </ul>
+      <div class="relation__main">
+        <form class="message">
+          <input type="text" placeholder="Name (Required)" required minlength="3">
+          <input type="email" placeholder="Email (Required)" required>
+          <input type="text" placeholder="Subject">
+          <input class="message__content" type="text" placeholder="Describe your project in detail...">
+          <button class="message__btn" type="submit">Отправить</button>
+        </form>
+        <div class="contacts">
+          <h3 class="contacts__title">
+            Contact Information
+          </h3>
+          <p class="contacts__description">
+            Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh.
+            Fusce vitae aliquam tellus. Proin sit amet volutpat libero.
+            Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
+          </p>
+          <ul class="contacts__information">
+            <li class="contacts__item">
+              <span>
+                <img src="assets/contacts/location.png" alt="location">
+              </span>
+              <a href="">
+                Elm St. 14/05 Lost City
+              </a>
+            </li>
+            <li class="contacts__item">
+              <span>
+                <img src="assets/contacts/phone.png" alt="phone">
+              </span>
+              <a href="tel:035283318635">
+                03528 331 86 35
+              </a>
+            </li>
+            <li class="contacts__item">
+              <span>
+                <img src="assets/contacts/mail.png" alt="mail">
+              </span>
+              <a href="mail:info@singolo.com">
+                info@singolo.com
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
-    <div class="line__relation"></div>
+    <div class="relation-line"></div>
     <footer>
       <h3>
         © Copyright 2013
       </h3>
       <p class="communication">
-        <a href="">
+        <a>
           <img src="assets/social_icon/facebook.png" alt="facebook">
         </a>
-        <a href="">
+        <a>
           <img src="assets/social_icon/google+.png" alt="google">
         </a>
-        <a href="">
+        <a>
           <img src="assets/social_icon/twitter.png" alt="twitter">
         </a>
-        <a href="">
+        <a>
           <img src="assets/social_icon/linkedin.png" alt="linkedin">
         </a>
       </p>
     </footer>
-    <div class="line__footer"></div>
   </body>
 </html>
