@@ -189,6 +189,7 @@ nav > ul > li:hover {
   height: 128px;
   font-size: 12px;
   font-weight: 400;
+  text-align: justify;
   line-height: normal;
   color: #767e9e;
 }
@@ -197,6 +198,8 @@ nav > ul > li:hover {
   display: block;
   margin-right: 18px;
   padding-top: 2px;
+  width: 62px;
+  height: 61px;
 }
 
 .services__item:nth-child(2) > .service__icon,
@@ -461,6 +464,7 @@ input:-ms-input-placeholder  {
   font-weight: 400 !important;
   color: #f0d8d9  !important;;
   text-align: left !important;
+  vertical-align: middle !important;
 }
 
 form {
