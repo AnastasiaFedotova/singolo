@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body id="headers">
     <header>
       <h1 class="logo">
           SINGOLO
@@ -16,27 +16,37 @@
       <nav>
           <ul>
               <li>
+                <a href="#headers" class="focus">
                   HOME
+                </a>
               </li>
               <li class="nav__dota">
               </li>
               <li>
+                <a href="#service">
                   SERVICES
+                </a>
               </li>
               <li class="nav__dota">
               </li>
               <li>
+                <a href="#portfolio">
                   PORTFOLIO
+                </a>
               </li>
               <li class="nav__dota">
               </li>
               <li>
+                <a href="#description">
                   ABOUT
+                </a>
               </li>
               <li class="nav__dota">
               </li>
               <li>
+                <a href="#contact">
                   CONTACT
+                </a>
               </li>
           </ul>
       </nav>
@@ -48,7 +58,7 @@
         <a class="slider__btn slider__btn_next"></a>
       </div>
       <div class="line-slider"></div>
-      <section class="services">
+      <section class="services" id="service">
         <h2 class="services__header">
           Our Services
         </h2>
@@ -145,7 +155,7 @@
       </section>
     </main>
     <div class="line-bottom"></div>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
       <h2 class="portfolio__title">
         Portfolio
       </h2>
@@ -215,7 +225,7 @@
       </ul>
     </section>
     <div class="portfolio-line"></div>
-    <section class="resume">
+    <section class="resume" id="description">
       <h2 class="resume__title">
         About Us
       </h2>
@@ -297,7 +307,7 @@
       </ul>
     </section>
     <div class="resume-line"></div>
-    <section class="relation">
+    <section class="relation" id="contact">
       <h2 class="relation__title">
         Get a Quote
       </h2>
@@ -372,5 +382,6 @@
         </a>
       </p>
     </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>
