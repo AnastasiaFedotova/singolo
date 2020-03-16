@@ -66,7 +66,7 @@ nav > ul > li > a:focus {
   color: #f06c64;
 }
 
-.focus {
+nav > ul > li > a.focus {
   color: #f06c64 !important;
 }
 
@@ -91,7 +91,17 @@ nav > ul > li > a:focus {
   width: 1020px;
   height: 594px;
   background-color: #f06c64;
-  background-image: url("assets/mobile.png");
+  background-image: url("assets/phone/slide1.png");
+}
+
+.slider_2 {
+  background-color: #648BF0;
+  background-image: url("assets/phone/slide2.png");
+}
+
+.slider_1 {
+  background-color: #f06c64;
+  background-image: url("assets/phone/slide1.png");
 }
 
 .slider__btn {
@@ -121,6 +131,31 @@ nav > ul > li > a:focus {
 
 .slider__btn_next:hover {
   background-image: url("assets/next_hover.png");
+}
+
+.btn {
+  position: absolute;
+  display: inline-block;
+}
+
+.btn_mobile1 {
+  top: 150px;
+  left: 110px;
+  z-index: 0;
+  width: 217px;
+  height: 460px;
+}
+
+.btn_mobile2 {
+  top: 270px;
+  left: 425px;
+  z-index: 0;
+  width: 460px;
+  height: 217px;
+}
+
+.btn_hiden {
+  display: none;
 }
 
 .line-slider {
@@ -267,10 +302,13 @@ nav > ul > li > a:focus {
 .portfolio__nav-item {
   display: inline-block;
   margin-right: 6px;
+}
+
+.portfolio__nav-item > a {
+  display: inline-block;
   padding: 4px 7px;
   font-size: 12px;
   color: #767e9e;
-  font-family: "Lato";
   font-weight: 400;
   text-align: center;
   border-radius: 5px;
@@ -278,9 +316,14 @@ nav > ul > li > a:focus {
   cursor: pointer;
 }
 
-.portfolio__nav-item:hover {
-  color: #c5c5c5;
+.portfolio__nav-item > a.focus {
   border-color: #c5c5c5;
+  color: #c5c5c5;
+}
+
+.portfolio__nav-item > a:hover {
+  border-color: #c5c5c5;
+  color: #c5c5c5;
 }
 
 .portfolio-line {
