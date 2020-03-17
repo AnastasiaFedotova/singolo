@@ -40,8 +40,13 @@ class Slider {
 }
 
 class Mobile {
-  constructor() {
+  constructor(button) {
+    this.button = document.querySelector(button);
+    this.button.addEventListener("click", () => this.showScreen.call(this));
+  }
 
+  showScreen() {
+    Array.prototype.forEach.call(this.button.querySelectorAll(`img`), elem => elem.classList.toggle("btn_hidden"));
   }
 }
 
@@ -49,4 +54,6 @@ class Mobile {
 let navSingolo = new Navigation("nav", "focus");
 let navPortfolio = new Navigation(".portfolio__nav", "focus");
 let slider = new Slider(".slider", 2);
-let mobile1 = new Mobile();
+let mobile1 = new Mobile(".btn_mobile1");
+let mobile2 = new Mobile(".btn_mobile2");
+let mobile3 = new Mobile(".btn_mobile3");

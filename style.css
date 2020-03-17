@@ -104,6 +104,93 @@ nav > ul > li > a.focus {
   background-image: url("assets/phone/slide1.png");
 }
 
+.btn {
+  position: absolute;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn img {
+  position: absolute;
+}
+
+.btn_mobile2 {
+  top: 270px;
+  left: 425px;
+  z-index: 0;
+  width: 460px;
+  height: 217px;
+}
+
+.btn_mobile3 {
+  display: none;
+  top: 150px;
+  left: 390px;
+  z-index: 0;
+  width: 217px;
+  height: 480px;
+}
+
+.slider_1 > .btn_mobile3 {
+  display: none;
+}
+
+.slider_2 > .btn {
+  display: none;
+}
+
+.slider_2 > .btn_mobile3 {
+  display: inline-block;
+}
+
+.btn_mobile1 {
+  top: 150px;
+  left: 110px;
+  z-index: 0;
+  width: 217px;
+  height: 460px;
+}
+
+.btn_mobile1 > .btn__phone-screen {
+  top: 64px;
+  left: 16px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_mobile1 > .btn__phone-dot {
+  top: 17px;
+  left: 107px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_mobile2 > .btn__phone-screen {
+  top: 16px;
+  left: 60px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_mobile2 > .btn__phone-dot {
+  top: 107px;
+  left: 434px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_mobile3 > .btn__phone-screen {
+  top: 57px;
+  left: 7px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_mobile3 > .btn__phone-dot {
+  top: 8px;
+  left: 105px;
+  transition: visibility 0s ease 0.2s;
+}
+
+.btn_hidden {
+  visibility: hidden;
+}
+
 .slider__btn {
   position: relative;
   top: 280.76px;
@@ -131,31 +218,6 @@ nav > ul > li > a.focus {
 
 .slider__btn_next:hover {
   background-image: url("assets/next_hover.png");
-}
-
-.btn {
-  position: absolute;
-  display: inline-block;
-}
-
-.btn_mobile1 {
-  top: 150px;
-  left: 110px;
-  z-index: 0;
-  width: 217px;
-  height: 460px;
-}
-
-.btn_mobile2 {
-  top: 270px;
-  left: 425px;
-  z-index: 0;
-  width: 460px;
-  height: 217px;
-}
-
-.btn_hiden {
-  display: none;
 }
 
 .line-slider {
