@@ -19,6 +19,19 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+<<<<<<< HEAD
+=======
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: #ffffff;
+  border: none;
+}
+
+>>>>>>> master
 /* make sure to set some focus styles for accessibility */
 :focus {
     outline: 0;
@@ -121,6 +134,7 @@ html {
 }
 
 /**
+<<<<<<< HEAD
  * Address `outline` inconsistency between Chrome and other browsers.
  */
 
@@ -129,11 +143,18 @@ a:focus {
 }
 
 /**
+=======
+>>>>>>> master
  * Improve readability when focused and also mouse hovered in all browsers.
  */
 
 a:active,
+<<<<<<< HEAD
 a:hover {
+=======
+a:hover,
+a:focus {
+>>>>>>> master
     outline: 0;
 }
 
