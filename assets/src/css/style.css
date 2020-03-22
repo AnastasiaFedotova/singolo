@@ -107,13 +107,13 @@ nav > ul > li > a.focus {
 .slide_1 {
   z-index: 1;
   background-color: #f06c64;
-  background-image: url("assets/icon/phone/slide1.png");
+  background-image: url("../../icon/phone/slide1.png");
 }
 
 .slide_2 {
   z-index: 0;
   background-color: #648BF0;
-  background-image: url("assets/icon/phone/slide2.png");
+  background-image: url("../../icon/phone/slide2.png");
 }
 
 .slide_left {
@@ -213,20 +213,20 @@ nav > ul > li > a.focus {
 
 .slider__btn_back {
   margin-left: 41.50px;
-  background-image: url("assets/icon/back.png");
+  background-image: url("../../icon/back.png");
 }
 
 .slider__btn_back:hover {
-  background-image: url("assets/icon/back_hover.png");
+  background-image: url("../../icon/back_hover.png");
 }
 
 .slider__btn_next {
   margin-left: 960px;
-  background-image: url("assets/icon/next.png");
+  background-image: url("../../icon/next.png");
 }
 
 .slider__btn_next:hover {
-  background-image: url("assets/icon/next_hover.png");
+  background-image: url("../../icon/next_hover.png");
 }
 
 .line-slider {
