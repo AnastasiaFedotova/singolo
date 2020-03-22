@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="assets/src/css/style.css">
   </head>
   <body id="headers">
+    <div class="overlay">
+      <div class="modal">
+        <button class="modal__btn">
+          Ok
+        </button>
+      </div>
+    </div>
     <div class="container">
       <header>
         <h1 class="logo">
@@ -338,8 +345,8 @@
           <form class="message">
             <input type="text" placeholder="Name (Required)" required minlength="3">
             <input type="email" placeholder="Email (Required)" required>
-            <input type="text" placeholder="Subject">
-            <input class="message__content" type="text" placeholder="Describe your project in detail...">
+            <input class="message__subject" type="text" placeholder="Subject">
+            <textarea class="message__content" type="text" rows="12" placeholder="Describe your project in detail..." maxlength="500"></textarea>
             <button class="message__btn" type="submit">Отправить</button>
           </form>
           <div class="contacts">

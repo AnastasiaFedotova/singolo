@@ -133,6 +133,53 @@ class Mobile {
   }
 }
 
+class Modal {
+  constructor(modalSelector, callFormSelector) {
+    this.modal = document.querySelector(modalSelector);
+    this.callForm = document.querySelector(callFormSelector);
+
+    this.callForm.querySelector(".message__btn").addEventListener("click", e => this.openModal(e))
+    this.modal.querySelector(".modal__btn").addEventListener("click", e => this.closeModal(e))
+  }
+
+  openModal(event) {
+    event.preventDefault();
+    this.modal.classList.add("overlay_show");
+    this.initModal();
+  }
+
+  initModal() {
+    let data = this.getData();
+    let div = document.createElement("div");
+    div.classList.add("modal__message");
+    div.innerHTML = `<h2>${data.message}</h2>
+                    <p>${data.subject}</p>
+                    <p>${data.description}</p>`;
+    this.modal.querySelector(".modal").prepend(div);
+  }
+
+  getData() {
+    let obj = {
+      "message": "The letter was sent",
+      "subject": this.callForm.querySelector(".message__subject").value || "No subject",
+      "description": this.callForm.querySelector(".message__content").value || "No description"
+    }
+    return obj;
+  }
+
+  deletData() {
+    this.modal.querySelector(".modal__message").remove();
+    Array.from(this.callForm.querySelectorAll("input")).forEach(input => input.value = "");
+    this.callForm.querySelector("textarea").value = "";
+  }
+
+  closeModal(event) {
+    event.preventDefault();
+    this.deletData();
+    this.modal.classList.remove("overlay_show");
+  }
+}
+
 
 let navSingolo = new Navigation("nav", "focus");
 let portfolio = new Gallery(".portfolio__container", "focus", "portfolio__img_active");
@@ -140,3 +187,4 @@ let slider = new Slider(".slider", ".slide");
 let mobile1 = new Mobile(".btn_mobile1");
 let mobile2 = new Mobile(".btn_mobile2");
 let mobile3 = new Mobile(".btn_mobile3");
+let modal = new Modal(".overlay", ".message");
