@@ -1,48 +1,131 @@
 class Navigation {
-  constructor(nav, styleClass) {
+  constructor(navSelector, styleClass) {
     this.styleClass = styleClass;
-    this.nav = document.querySelector(nav);
-    this.nav.addEventListener("click", event => this.toFocus.call(this, event));
+    this.nav = document.querySelector(navSelector);
+    this.anchors = this.nav.querySelectorAll('a[href*="#"]');
+    this.position = this.getPosition();
+
+    this.toScrol();
+    window.addEventListener("scroll", () => this.switch());
   }
 
-  toFocus(event) {
-    if(event.target.tagName != "A" || event.target.classList.contains(this.styleClass)) return;
-    this.nav.querySelector(`.${this.styleClass}`).classList.remove(this.styleClass);
-    event.target.classList.add(this.styleClass);
+  getPosition() {
+    let position = [],
+        headHeight = 50;
+    for (let item of this.anchors) {
+      position.push(document.getElementById(item.getAttribute('href').substr(1)).getBoundingClientRect().top + pageYOffset - headHeight);
+    }
+    return position;
+  }
+
+  toScrol() {
+    for (let anchor of this.anchors) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const blockID = anchor.getAttribute('href').substr(1);
+
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      })
+    }
+  }
+
+  switch() {
+    for(let i = this.position.length - 1; i >= 0; i--) {
+      if (pageYOffset > this.position[i]) {
+        document.querySelector("." + this.styleClass).classList.remove(this.styleClass);
+        this.anchors[i].classList.add(this.styleClass);
+        return;
+      }
+    };
+  }
+}
+
+class Gallery {
+  constructor (gallerySelector, styleClassActiveItemMenu, styleClassActiveImg) {
+    this.activeItemMenu = styleClassActiveItemMenu;
+    this.activeImg = styleClassActiveImg;
+    this.gallery = document.querySelector(gallerySelector);
+
+    this.menuList = this.gallery.querySelector(".portfolio__menu");
+    this.imgList = this.gallery.querySelector(".portfolio__gallery");
+
+    this.imgList.addEventListener("click", event => this.toFocusImg(event));
+    this.menuList.addEventListener("click", event => this.toFocusMenu(event));
+  }
+  toFocusMenu(event) {
+    event.preventDefault();
+    if (event.target.tagName != "A" || event.target.classList.contains(this.activeItemMenu)) return;
+    this.menuList.querySelector(`.${this.activeItemMenu}`).classList.remove(this.activeItemMenu);
+    event.target.classList.add(this.activeItemMenu);
+    this.arrangeImg(event.target)
+  }
+
+  arrangeImg(linkActive) {
+    let arrImg = [];
+    document.querySelector(".portfolio").classList.add("portfolio_loading");
+    Array.from(this.imgList.children).forEach(li => {
+      if(li.dataset.order == linkActive.dataset.indicator) arrImg.unshift({ src: li.children[0].src, order: li.dataset.order});
+      else arrImg.push({ src: li.children[0].src, order: li.dataset.order})
+    });
+    setTimeout(() => {arrImg.forEach((newData, index) => {
+      this.imgList.children[index].children[0].src = newData.src;
+      this.imgList.children[index].dataset.order =  newData.order;
+      })
+    }, 500);
+    setTimeout(() => {document.querySelector(".portfolio").classList.remove("portfolio_loading")}, 500);
+  }
+
+  toFocusImg(event) {
+    event.preventDefault();
+    if (event.target.tagName != "IMG" ) return;
+    if (event.target.closest("li").classList.contains(this.activeImg)) {
+      event.target.closest("li").classList.remove(this.activeImg);
+      return;
+    }
+    if(this.imgList.querySelector(`.${this.activeImg}`)) this.imgList.querySelector(`.${this.activeImg}`).classList.remove(this.activeImg);
+    event.target.closest("li").classList.add(this.activeImg);
   }
 }
 
 class Slider {
-  constructor(slider, countSlider) {
-    this.slider = document.querySelector(slider);
-    this.count = countSlider;
-    this.position = 1;
+  constructor(sliderSelector, slidesSelectors) {
+    this.slider = document.querySelector(sliderSelector);
+    this.slides = document.querySelectorAll(slidesSelectors);
+    this.position = 0;
     this.slider.querySelector(".slider__btn_next").addEventListener("click", () => this.goNext.call(this));
     this.slider.querySelector(".slider__btn_back").addEventListener("click", () => this.goBack.call(this))
   }
 
   goNext() {
     let sliderBack = this.position;
-    this.position + 1 > this.count ? this.position = 1 : this.position++;
-    this.draw(this.position, sliderBack);
+    this.position + 1 >= this.slides.length ? this.position = 0 : this.position++;
+    this.draw(this.position, sliderBack, "next");
   }
 
   goBack() {
     let sliderBack = this.position;
-    this.position - 1 < 1 ? this.position = this.count : this.position--;
-    this.draw(this.position, sliderBack);
+    this.position - 1 < 0 ? this.position = this.slides.length : this.position--;
+    this.draw(this.position, sliderBack, "back");
   }
 
-  draw(count, countBack) {
-    this.slider.classList.remove(`slider_${countBack}`);
-    this.slider.classList.add(`slider_${count}`);
+  draw(currentSlider, sliderBack, direction) {
+    if(direction == "next") {
+      this.slides[currentSlider].style.zIndex = 1;
+      this.slides[sliderBack].style.zIndex = 2;
+      this.slides[currentSlider].classList.add("slide_right");
+      return;
+    }
   }
 }
 
 class Mobile {
   constructor(button) {
     this.button = document.querySelector(button);
-    this.button.addEventListener("click", () => this.showScreen.call(this));
+    this.button.addEventListener("click", () => this.showScreen());
   }
 
   showScreen() {
@@ -52,8 +135,8 @@ class Mobile {
 
 
 let navSingolo = new Navigation("nav", "focus");
-let navPortfolio = new Navigation(".portfolio__nav", "focus");
-let slider = new Slider(".slider", 2);
+let portfolio = new Gallery(".portfolio__container", "focus", "portfolio__img_active");
+let slider = new Slider(".slider", ".slide");
 let mobile1 = new Mobile(".btn_mobile1");
 let mobile2 = new Mobile(".btn_mobile2");
 let mobile3 = new Mobile(".btn_mobile3");
