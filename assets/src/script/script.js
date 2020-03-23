@@ -92,44 +92,58 @@ class Gallery {
 }
 
 class Slider {
-  constructor(sliderSelector, slidesSelectors) {
+  constructor(sliderSelector) {
     this.slider = document.querySelector(sliderSelector);
-    this.slides = document.querySelectorAll(slidesSelectors);
+    this.slides = this.slider.querySelectorAll(".slide");
     this.position = 0;
+
+    this.initSlides(this.position);
+
     this.slider.querySelector(".slider__btn_next").addEventListener("click", () => this.goNext.call(this));
     this.slider.querySelector(".slider__btn_back").addEventListener("click", () => this.goBack.call(this))
   }
 
+  initSlides(currentIndexSlide) {
+    let obj = {
+      currentSlide: this.slides[currentIndexSlide].cloneNode(true),
+      nextSlide: this.slides[currentIndexSlide + 1] ? this.slides[currentIndexSlide + 1].cloneNode(true) : this.slides[0].cloneNode(true),
+      backSlide: this.slides[currentIndexSlide - 1] ? this.slides[currentIndexSlide - 1].cloneNode(true) : this.slides[this.slides.length - 1].cloneNode(true)
+    }
+
+    Array.from(this.slider.querySelectorAll(".slide")).forEach(elem => {
+      elem.remove();
+    });
+
+    this.slider.querySelector(".slider__container").append(obj.nextSlide);
+    this.slider.querySelector(".slider__container").append(obj.currentSlide);
+    this.slider.querySelector(".slider__container").append(obj.backSlide);
+
+    this.getMobile(".btn_mobile1");
+    this.getMobile(".btn_mobile2");
+    this.getMobile(".btn_mobile3");
+  }
+
+  getMobile(button) {
+      let btn = document.querySelector(button);
+      btn.addEventListener("click", () => showScreen());
+
+      function showScreen() {
+        Array.prototype.forEach.call(btn.querySelectorAll(`img`), elem => elem.classList.toggle("btn_hidden"));
+      }
+  }
+
   goNext() {
-    let sliderBack = this.position;
+    this.slider.querySelectorAll(".slide")[1].style.right = "-1020px";
+    this.slider.querySelectorAll(".slide")[2].style.right = "-1020px";
     this.position + 1 >= this.slides.length ? this.position = 0 : this.position++;
-    this.draw(this.position, sliderBack, "next");
+    this.initSlides(this.position);
   }
 
   goBack() {
-    let sliderBack = this.position;
-    this.position - 1 < 0 ? this.position = this.slides.length : this.position--;
-    this.draw(this.position, sliderBack, "back");
-  }
-
-  draw(currentSlider, sliderBack, direction) {
-    if(direction == "next") {
-      this.slides[currentSlider].style.zIndex = 1;
-      this.slides[sliderBack].style.zIndex = 2;
-      this.slides[currentSlider].classList.add("slide_right");
-      return;
-    }
-  }
-}
-
-class Mobile {
-  constructor(button) {
-    this.button = document.querySelector(button);
-    this.button.addEventListener("click", () => this.showScreen());
-  }
-
-  showScreen() {
-    Array.prototype.forEach.call(this.button.querySelectorAll(`img`), elem => elem.classList.toggle("btn_hidden"));
+    this.slider.querySelectorAll(".slide")[0].style.left = "+1020px";
+    this.slider.querySelectorAll(".slide")[1].style.left = "+1020px";
+    this.position - 1 < 0 ? this.position = this.slides.length -1 : this.position--;
+    this.initSlides(this.position);
   }
 }
 
@@ -198,7 +212,4 @@ class Modal {
 let navSingolo = new Navigation("nav", "focus");
 let portfolio = new Gallery(".portfolio__container", "focus", "portfolio__img_active");
 let slider = new Slider(".slider", ".slide");
-let mobile1 = new Mobile(".btn_mobile1");
-let mobile2 = new Mobile(".btn_mobile2");
-let mobile3 = new Mobile(".btn_mobile3");
 let modal = new Modal(".overlay", ".message");

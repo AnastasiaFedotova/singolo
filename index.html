@@ -64,21 +64,23 @@
         <div class="slider">
           <a class="slider__btn slider__btn_back"></a>
           <a class="slider__btn slider__btn_next"></a>
-          <div class="slide slide_1">
-            <a class="btn btn_mobile1">
-              <img class="btn__phone-screen" src="assets/icon/phone/screen1.png">
-              <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
-            </a>
-            <a class="btn btn_mobile2">
-              <img class="btn__phone-screen" src="assets/icon/phone/screen2.png">
-              <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
-            </a>
-          </div>
-          <div class="slide slide_2">
-            <a class="btn btn_mobile3">
-              <img class="btn__phone-screen" src="assets/icon/phone/screen3.png">
-              <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
-            </a>
+          <div class="slider__container">
+            <div class="slide slide_1">
+              <a class="btn btn_mobile1">
+                <img class="btn__phone-screen" src="assets/icon/phone/screen1.png">
+                <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
+              </a>
+              <a class="btn btn_mobile2">
+                <img class="btn__phone-screen" src="assets/icon/phone/screen2.png">
+                <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
+              </a>
+            </div>
+            <div class="slide slide_2">
+              <a class="btn btn_mobile3">
+                <img class="btn__phone-screen" src="assets/icon/phone/screen3.png">
+                <img class="btn__phone-dot" src="assets/icon/phone/RedDot.png">
+              </a>
+            </div>
           </div>
         </div>
         <div class="line-slider"></div>
@@ -346,7 +348,7 @@
             <input class="message__name" type="text" placeholder="Name (Required)" required minlength="3">
             <input class="message__email" type="email" placeholder="Email (Required)" required>
             <input class="message__subject" type="text" placeholder="Subject">
-            <textarea class="message__content" type="text" rows="12" placeholder="Describe your project in detail..." maxlength="500"></textarea>
+            <textarea class="message__content" type="text" rows="11" placeholder="Describe your project in detail..." maxlength="500"></textarea>
             <button class="message__btn" type="submit">Отправить</button>
           </form>
           <div class="contacts">
@@ -408,6 +410,6 @@
         </p>
       </footer>
     </div>
-      <script src="assets/src/script/script.js" defer></script>
+    <script src="assets/src/script/script.js" defer></script>
   </body>
 </html>

@@ -148,11 +148,23 @@ nav > ul > li > a.focus {
   height: 594px;
 }
 
+.slider__container {
+  position: relative;
+  left: -1020px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 3060px;
+  height: 594px;
+  overflow: hidden;
+}
+
 .slide {
   position: relative;
   display: inline-block;
   width: 1020px;
   height: 594px;
+  transition: all 1s ease;
 }
 
 .slide_1 {
@@ -202,9 +214,8 @@ nav > ul > li > a.focus {
 }
 
 .btn_mobile3 {
-  display: none;
   top: 45px;
-  left: 310px;
+  left: 390px;
   z-index: 0;
   width: 217px;
   height: 480px;
@@ -229,7 +240,7 @@ nav > ul > li > a.focus {
 }
 
 .btn_mobile2 > .btn__phone-dot {
-  top: 17px;
+  top: 16px;
   left: 98px;
   transition: visibility 0.3s ease 0.2s;
 }
@@ -252,7 +263,7 @@ nav > ul > li > a.focus {
 
 .slider__btn {
   position: absolute;
-  top: 55%;
+  top: 50%;
   bottom: auto;
   z-index: 20;
   display: inline-block;
@@ -696,7 +707,7 @@ input:-ms-input-placeholder  {
 .message__btn {
   position: relative;
   left: 80%;
-  margin-top: 16px;
+  margin: 16px 0;
   padding: 5px 20px;
   font-size: 14px;
   color: #d6564f;
