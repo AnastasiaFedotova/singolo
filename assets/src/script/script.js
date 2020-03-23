@@ -152,9 +152,14 @@ class Modal {
     let data = this.getData();
     let div = document.createElement("div");
     div.classList.add("modal__message");
-    div.innerHTML = `<h2>${data.message}</h2>
-                    <p>${data.subject}</p>
-                    <p>${data.description}</p>`;
+    if(this.checkValidity()) {
+      div.innerHTML = `<h2>${data.message}</h2>
+      <p>${data.subject}</p>
+      <p>${data.description}</p>`;
+    }
+    else {
+      div.innerHTML = "<h2>Please fill in the required fields correctly</h2>";
+    }
     this.modal.querySelector(".modal").prepend(div);
   }
 
@@ -167,10 +172,19 @@ class Modal {
     return obj;
   }
 
+  checkValidity() {
+    if (this.callForm.querySelector(".message__name").value.length < 2 || !this.callForm.querySelector(".message__email").validity.valid) {
+      return false;
+    }
+    return true;
+  }
+
   deletData() {
     this.modal.querySelector(".modal__message").remove();
-    Array.from(this.callForm.querySelectorAll("input")).forEach(input => input.value = "");
-    this.callForm.querySelector("textarea").value = "";
+    if(this.checkValidity()) {
+      Array.from(this.callForm.querySelectorAll("input")).forEach(input => input.value = "");
+      this.callForm.querySelector("textarea").value = "";
+    }
   }
 
   closeModal(event) {
