@@ -263,7 +263,7 @@ nav > ul > li > a.focus {
 
 .slider__btn {
   position: absolute;
-  top: 50%;
+  top: 360px;
   bottom: auto;
   z-index: 20;
   display: inline-block;
@@ -708,7 +708,7 @@ input:-ms-input-placeholder  {
   position: relative;
   left: 80%;
   margin: 16px 0;
-  padding: 5px 20px;
+  padding: 5px 30px;
   font-size: 14px;
   color: #d6564f;
   background-color: #f2f2f2;
@@ -807,4 +807,200 @@ footer img {
 footer img:hover {
   background-color: rgba(247, 238, 238, 0.027);
   border-radius: 50px;
+}
+
+@media (max-width: 1019px) and (min-width: 768px)  {
+  header,
+  .line-header,
+  .container,
+  .line-header,
+  .slider,
+  .line-slider,
+  .line-bottom,
+  .services
+   {
+    width: 768px;
+  }
+
+  nav {
+    width: 74%;;
+  }
+  .nav__dota {
+    width: 1px;
+    height: 1px;
+    border: 0.5px solid #ffffff;
+  }
+
+  nav > ul > li {
+    font-size: 14px;
+  }
+
+  nav > ul > li > a:hover {
+    color: #ffffff;
+  }
+
+  .slider {
+    height: 447px;
+  }
+
+  .slide {
+    width:  calc(100% / 3);
+    height: 447px;
+    background-repeat: no-repeat;
+    background-size: 750px;
+    background-position: 0px;
+  }
+
+  .slider__container {
+    left: -768px;
+    width: calc(768px * 3);
+    height: 447px;
+  }
+
+  .slider__btn {
+    top: 300px;
+  }
+
+  .slider__btn_next {
+    margin-left: 713px;
+  }
+
+  .btn_mobile1 {
+    top: 40px;
+    left: 80px;
+    width: 160px;
+    height: 340px;
+  }
+
+  .btn_mobile1 > .btn__phone-screen {
+    top: 50px;
+    left: 13px;
+    width: 138px;
+    height: 246px;
+  }
+
+  .btn_mobile1 > .btn__phone-dot {
+    bottom: 105px;
+    right: 62px;
+  }
+
+  .btn_mobile2 {
+    top: 133px;
+    left: 314px;
+    z-index: 0;
+    width: 335px;
+    height: 158px;
+  }
+
+  .btn_mobile2 > .btn__phone-screen {
+    width: 246px;
+    top: 10px;
+    left: 42px;
+  }
+
+  .btn_mobile2 > .btn__phone-dot {
+    top: 11px;
+    left: 68px;
+  }
+
+  .btn_mobile3 {
+    top: 36px;
+    left: 280px;
+    z-index: 0;
+    width: 170px;
+    height: 355px;
+  }
+
+  .btn_mobile3 > .btn__phone-screen {
+    top: 51px;
+    left: 12px;
+    width: 148px;
+  }
+
+  .btn_mobile3 > .btn__phone-dot {
+    bottom: 114px;
+    right: 68px;
+  }
+
+  .services {
+    height: 654px;
+  }
+
+  .services__list {
+  }
+
+  .services__item {
+    margin-right: 0px;
+  }
+
+  .services__item:nth-child(odd) {
+    margin-right: 60px;
+  }
+
+  .services__description {
+    width: auto;
+    height: auto;
+    padding: 0 50px 47px 40px;
+  }
+
+  .portfolio {
+    height: 929px;
+  }
+
+  .portfolio__description {
+    width: 95%;
+  }
+
+  .portfolio__gallery {
+    height: 800px;
+  }
+
+  .portfolio__img {
+    margin-bottom: 10px;
+  }
+
+  .resume__employee-photo {
+    width: 100%;
+  }
+
+  .resume__list {
+    width: 100%;
+  }
+
+  .resume__item {
+    width: 32%;
+  }
+
+  .relation__description {
+    width: 100%;
+  }
+
+  .message {
+    width: 100%;
+  }
+
+  .message > input {
+    width: 100%;
+  }
+
+  .message__content {
+    width: 96%;
+  }
+
+  .message__btn {
+    left: 0;
+  }
+
+  .contacts {
+    width: 70%;
+    padding-left: 40px;
+  }
+
+  footer > h3 {
+    display: none;
+  }
+
+  .communication {
+    margin: auto;
+  }
 }

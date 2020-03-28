@@ -133,15 +133,15 @@ class Slider {
   }
 
   goNext() {
-    this.slider.querySelectorAll(".slide")[1].style.transform = `translate(-1020px, 0)`;
-    this.slider.querySelectorAll(".slide")[2].style.transform = `translate(-1020px, 0)`;
+    this.slider.querySelectorAll(".slide")[1].style.transform = `translate(-100%, 0)`;
+    this.slider.querySelectorAll(".slide")[2].style.transform = `translate(-100%, 0)`;
     this.position + 1 >= this.slides.length ? this.position = 0 : this.position++;
     setTimeout(() => this.initSlides(this.position), 1000)
   }
 
   goBack() {
-    this.slider.querySelectorAll(".slide")[0].style.transform = `translate(+1020px, 0)`;
-    this.slider.querySelectorAll(".slide")[1].style.transform = `translate(+1020px, 0)`;
+    this.slider.querySelectorAll(".slide")[0].style.transform = `translate(+100%, 0)`;
+    this.slider.querySelectorAll(".slide")[1].style.transform = `translate(+100%, 0)`;
     this.position - 1 < 0 ? this.position = this.slides.length -1 : this.position--;
     setTimeout(() => this.initSlides(this.position), 1000)
     ;
