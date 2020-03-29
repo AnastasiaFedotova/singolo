@@ -1111,8 +1111,17 @@ footer img:hover {
     top: 60px;
     display: inline-block;
     width: 250px;
-    height: 300px;
+    height: 150px;
     background-color: #2d303a;
+  }
+
+  .nav_open > ul > li.nav__dota {
+    display: none;
+  }
+
+  .nav_open > ul > li {
+    padding-left: 20px;
+    width: 100%;
   }
 
   .slider,
