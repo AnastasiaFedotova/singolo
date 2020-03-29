@@ -1098,9 +1098,21 @@ footer img:hover {
     display: inline-block;
   }
 
+  .burger_open {
+    background-image: url(../../icon/logo/burger-menu.png);
+  }
+
   nav {
     position: absolute;
     display: none;
+  }
+
+  .nav_open {
+    top: 60px;
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+    background-color: #2d303a;
   }
 
   .slider,
