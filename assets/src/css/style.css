@@ -706,7 +706,7 @@ input:-ms-input-placeholder  {
 
 .message__btn {
   position: relative;
-  left: 80%;
+  left: 0;
   margin: 16px 0;
   padding: 5px 30px;
   font-size: 14px;
@@ -823,16 +823,13 @@ footer img:hover {
   }
 
   nav {
-    width: 74%;;
+    padding-top: 39px;
+    width: 74%;
   }
   .nav__dota {
     width: 1px;
     height: 1px;
     border: 0.5px solid #ffffff;
-  }
-
-  nav > ul > li {
-    font-size: 14px;
   }
 
   nav > ul > li > a:hover {
@@ -858,11 +855,15 @@ footer img:hover {
   }
 
   .slider__btn {
-    top: 300px;
+    top: 311px;
   }
 
   .slider__btn_next {
-    margin-left: 713px;
+    margin-left: 724px;
+  }
+
+  .slider__btn_back {
+    margin-left: 30px;
   }
 
   .btn_mobile1 {
@@ -923,28 +924,32 @@ footer img:hover {
   }
 
   .services {
-    height: 654px;
+    height: 667px;
+  }
+
+  .services__header {
+    padding-top: 6%;
   }
 
   .services__list {
   }
 
   .services__item {
-    margin-right: 0px;
+    margin-bottom: 50px;
   }
 
   .services__item:nth-child(odd) {
-    margin-right: 60px;
+    margin-right: 52px;
   }
 
   .services__description {
     width: auto;
     height: auto;
-    padding: 0 50px 47px 40px;
+    padding: 0 8% 5% 5%;
   }
 
   .portfolio {
-    height: 929px;
+    height: 959px;
   }
 
   .portfolio__description {
@@ -956,11 +961,34 @@ footer img:hover {
   }
 
   .portfolio__img {
-    margin-bottom: 10px;
+    margin-bottom: 3%;
+    width: 31%;
+    height: 23%;
+  }
+
+  .portfolio__menu {
+    margin-bottom: 4%;
+  }
+
+  .resume {
+    height: 533px;
+    padding-top: 65px;
+  }
+
+  .resume__description {
+    padding: 4% 0 5% 0;
   }
 
   .resume__employee-photo {
     width: 100%;
+  }
+
+  .resume__employee-name {
+    padding: 5% 0 1% 0;
+  }
+
+  .resume__communication {
+    margin: 6% 0;
   }
 
   .resume__list {
@@ -973,22 +1001,21 @@ footer img:hover {
 
   .relation__description {
     width: 100%;
+    padding-bottom: 8.5%;
   }
 
   .message {
-    width: 100%;
+    width: 135%;
   }
 
   .message > input {
     width: 100%;
+    margin-bottom: 3%;
   }
 
   .message__content {
     width: 96%;
-  }
-
-  .message__btn {
-    left: 0;
+    height: 35%;
   }
 
   .contacts {
@@ -1002,5 +1029,13 @@ footer img:hover {
 
   .communication {
     margin: auto;
+  }
+
+  .relation {
+    height: 625px;
+  }
+
+  .relation__title {
+    padding: 9% 0 4% 0;
   }
 }
