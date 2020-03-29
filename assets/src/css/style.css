@@ -23,6 +23,18 @@ header {
   background-color: #2d303a;
 }
 
+.burger {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  display: none;
+  width: 10%;
+  height: 30%;
+  background-image: url(../../icon/logo/burger-menu-horizont.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 main {
   overflow: hidden;
 }
@@ -165,6 +177,7 @@ nav > ul > li > a.focus {
   width: 1020px;
   height: 594px;
   transition: all 1s ease;
+  background-repeat: no-repeat;
 }
 
 .slide_1 {
@@ -1037,5 +1050,301 @@ footer img:hover {
 
   .relation__title {
     padding: 9% 0 4% 0;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .line-header,
+  .line-slider,
+  .line-bottom,
+  .resume-line,
+  .relation-line {
+    display: none;
+  }
+
+  header,
+  .line-header,
+  .container,
+  .line-header,
+  .slider,
+  .line-slider,
+  .line-bottom,
+  .services
+   {
+    width: 375px;
+  }
+
+  .overlay .modal {
+    width: 300px;
+  }
+
+  header {
+    position: relative;
+    top: 0;
+    height: 71px;
+  }
+
+  .logo-icon {
+    position: relative;
+    top: 39%;
+    left: 4px;
+    height: 15px;
+    display: block;
+    margin: auto;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  nav {
+    position: absolute;
+    display: none;
+  }
+
+  .slider,
+  .slider__container {
+    height: 220.7px;
+  }
+
+  .slider__container {
+    left: -375px;
+  }
+
+  .slider__btn {
+    top: 165px;
+  }
+
+  .slider__btn_back {
+    margin-left: 12px;
+  }
+
+  .slider__btn_next {
+    margin-left: 348px;
+  }
+
+  .slide {
+    width: 375px;
+    height: 220.7px;
+    background-size: 380px;
+  }
+
+  .btn_mobile1 {
+    top: 20px;
+    left: 40px;
+    z-index: 0;
+    width: 82px;
+    height: 172px;
+  }
+
+  .btn_mobile1 > .btn__phone-screen {
+    top: 24px;
+    left: 7px;
+    width: 70.5px;
+  }
+
+  .btn_mobile1 > .btn__phone-dot {
+    bottom: 54px;
+    right: 33px;
+    width: 2px;
+  }
+
+  .btn_mobile2 {
+    top: 66px;
+    left: 158px;
+    width: 171px;
+    height: 81px;
+  }
+
+  .btn_mobile2 > .btn__phone-screen {
+    top: 5px;
+    left: 22px;
+    width: 125px;
+  }
+
+  .btn_mobile2 > .btn__phone-dot {
+    top: 5px;
+    left: 34px;
+    width: 2px;
+  }
+
+  .btn_mobile3 {
+    top: 15px;
+    left: 140px;
+    width: 87px;
+    height: 181px;
+  }
+
+  .btn_mobile3 > .btn__phone-screen {
+    top: 27px;
+    left: 8px;
+    width: 75px;
+  }
+
+  .btn_mobile3 > .btn__phone-dot {
+    bottom: 57px;
+    right: 34px;
+    width: 2px;
+  }
+
+  .services {
+    height: 1032px;
+  }
+
+  .services__header {
+    padding: 32px 32px 30px;
+  }
+
+  .services__description {
+    display: inline-block;
+    margin-right: 40px;
+    padding-left: 32px;
+    width: auto;
+    line-height: 1.7;
+    text-align: inherit;
+  }
+
+  .services__list {
+    margin-top: 16px;
+    padding-left: 31px;
+  }
+
+  .services__item {
+    margin: 15px 0 11px;
+  }
+
+  .services__item:nth-child(4), .services__item:nth-child(5), .services__item:nth-child(6) {
+    margin: 15px 0;
+  }
+
+  .portfolio {
+    padding: 52px 30px;
+    height: 734px
+  }
+
+  .portfolio__description {
+    width: auto;
+    padding-bottom: 17px;
+  }
+
+  .portfolio__menu {
+    margin-bottom: 22px;
+  }
+
+  .portfolio__menu-item {
+    margin-right: 2px;
+  }
+
+  .portfolio__gallery {
+    height: 560px;
+  }
+
+  .portfolio__img {
+    width: 152px;
+    height: 129px;
+    margin-bottom: 13px;
+  }
+
+  .portfolio__img > img {
+    width: 152px;
+    height: 129px;
+  }
+
+  .resume {
+    padding: 42px 30px 67px 30px;
+    height: 1645px;
+  }
+
+  .resume__list {
+    flex-flow: column;
+    width: 100%;
+  }
+
+  .resume__item {
+    width: 100%;
+  }
+
+  .resume__item > img {
+    width: 100%;
+  }
+
+  .resume__employee-name {
+    padding-bottom: 4px;
+  }
+
+  .resume__communication {
+    margin: 11px 0 33px;
+  }
+
+  .resume__description {
+    padding-bottom: 23px;
+    text-align: left;
+    letter-spacing: 0.5px;
+  }
+
+  .relation {
+    padding: 0px 30px;
+    height: 970px;
+  }
+
+  .relation__main {
+    flex-flow: column;
+  }
+
+  .relation__title {
+    padding: 53px 0 28px 0;
+  }
+
+  .relation__description {
+    display: block;
+    padding-bottom: 21px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    letter-spacing: 0.5px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form > input{
+    width: 100% !important;
+  }
+
+  .message > input {
+    margin-bottom: 13px;
+    width: 95% !important;
+  }
+
+  .message__content {
+    width: 91%;
+    height: 136px;
+  }
+
+  .message__btn {
+    width: 100%;
+    height: 50px;
+  }
+
+  .contacts {
+    padding: 15px 0px;
+  }
+
+  .contacts__title {
+    padding-bottom: 3px;
+  }
+
+  .contacts__description {
+    padding-bottom: 11px;
+  }
+
+  footer > h3 {
+    display: none;
+  }
+
+  .communication {
+    margin: auto;
   }
 }

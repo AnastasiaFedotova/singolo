@@ -209,6 +209,17 @@ class Modal {
   }
 }
 
+class Burger {
+  constructor(burgerSelector) {
+    this.link = burgerSelector;
+    this.link.addEventListener("click", () => this.isOpen())
+  }
+
+  isOpen() {
+
+  }
+}
+
 
 let navSingolo = new Navigation("nav", "focus");
 let portfolio = new Gallery(".portfolio__container", "focus", "portfolio__img_active");
