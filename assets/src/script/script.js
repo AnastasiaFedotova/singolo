@@ -212,7 +212,7 @@ class Modal {
 class Burger {
   constructor(burgerSelector) {
     this.link = document.querySelector(burgerSelector);
-    this.link.addEventListener("click", () => this.isOpen())
+    this.link.addEventListener("click", () => this.isOpen());
   }
 
   isOpen() {
@@ -220,7 +220,6 @@ class Burger {
     document.querySelector("nav").classList.toggle("nav_open");
   }
 }
-
 
 let navSingolo = new Navigation("nav", "focus");
 let portfolio = new Gallery(".portfolio__container", "focus", "portfolio__img_active");

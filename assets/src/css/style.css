@@ -1111,7 +1111,7 @@ footer img:hover {
     top: 60px;
     display: inline-block;
     width: 250px;
-    height: 150px;
+    height: 350px;
     background-color: #2d303a;
   }
 
@@ -1120,7 +1120,7 @@ footer img:hover {
   }
 
   .nav_open > ul > li {
-    padding-left: 20px;
+    padding: 20px;
     width: 100%;
   }
 
