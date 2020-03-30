@@ -218,6 +218,10 @@ class Burger {
   isOpen() {
     this.link.classList.toggle("burger_open");
     document.querySelector("nav").classList.toggle("nav_open");
+    document.querySelector("nav").addEventListener("click", (e) => {
+      if(e.target.tagName == "A") document.querySelector("nav").classList.remove("nav_open");
+      return;
+    })
   }
 }
 
